@@ -1,0 +1,1 @@
+ wget https://oksesaneka22.github.io/script/zabbix-docker.sh && bash zabbix-docker.sh 

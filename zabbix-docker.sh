@@ -27,12 +27,8 @@ sudo docker run -d \
 -e ZBX_SERVER_HOST="zabbix-server" \
 -e PHP_TZ="Europe/Kiev" \
 -v /var/lib/zabbix/timezone:/etc/timezone \
--v /var/lib/zabbix/timezone:/etc/timezone \
--v /var/lib/zabbix/localtime:/etc/localtime \
 -v /var/lib/zabbix/localtime:/etc/localtime \
 -v /var/lib/zabbix/alertscripts:/usr/lib/zabbix/alertscripts \
--v /var/lib/zabbix/timezone:/etc/timezone \
--v /var/lib/zabbix/localtime:/etc/localtime \
 -p 10051:10051 -e DB_SERVER_HOST="zabbix-postgres" \
 -e POSTGRES_PASSWORD=zabbix \
 -e POSTGRES_USER=zabbix \
@@ -43,4 +39,4 @@ sudo docker run -d \
 
 
 
-sudo docker start zabbix-web
+sudo docker start zabbix-server

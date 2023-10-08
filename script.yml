@@ -1,0 +1,54 @@
+version: '3'
+services:
+ 
+  zabbix-postgress:
+    image: postgres:alpine
+    container_name: zabbix-postgres
+    networks:
+      - zabbix-net
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./var/lib/zabbix/timezone:/etc/timezone:ro
+      - ./var/lib/zabbix/localtime:/etc/localtime:ro
+    environment:
+      - POSTGRES_USER=zabbix
+      - POSTGRES_PASSWORD=zabbix
+ 
+  zabbix-server:
+    image: zabbix/zabbix-server-pgsql:alpine-latest
+    container_name: zabbix-server
+    networks:
+      - zabbix-net
+    volumes:
+      - /var/lib/zabbix/alertscripts:/usr/lib/zabbix/alertscripts
+      - /var/lib/zabbix/timezone:/etc/timezone:ro
+      - /var/lib/zabbix/localtime:/etc/localtime:ro
+    ports:
+      - "10051:10051"
+      - "161:161"
+    environment:
+      - DB_SERVER_HOST=zabbix-postgres
+      - POSTGRES_USER=zabbix
+      - POSTGRES_PASSWORD=zabbix
+ 
+  zabbix-web:
+    image: zabbix/zabbix-web-nginx-pgsql:alpine-latest
+    container_name: zabbix-web
+    networks:
+      - zabbix-net
+    volumes:
+      - ./var/lib/zabbix/timezone:/etc/timezone:ro
+      - ./var/lib/zabbix/localtime:/etc/localtime:ro
+    ports:
+      - "80:8080"
+      - "443:8443"
+    environment:
+      - DB_SERVER_HOST=zabbix-postgres
+      - POSTGRES_USER=zabbix
+      - POSTGRES_PASSWORD=zabbix
+      - ZBX_SERVER_HOST=zabbix-server
+      - PHP_TZ=Europe/Kiev
+ 
+networks:
+  zabbix-net:
+    driver: bridge

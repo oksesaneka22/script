@@ -1,2 +1,3 @@
  wget https://oksesaneka22.github.io/script/zabbix-docker.sh && bash zabbix-docker.sh 
  wget https://oksesaneka22.github.io/script/zabbix_docker2.sh && bash zabbix_docker2.sh 
+ wget https://oksesaneka22.github.io/script/zabbix3.sh && bash zabbix3.sh 

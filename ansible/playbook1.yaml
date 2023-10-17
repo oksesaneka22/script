@@ -1,0 +1,28 @@
+---
+- hosts: all
+  gather_facts: false
+
+  tasks:
+  - name: ping
+    win_ping:
+  - name: Download 7z
+    ansible.windows.win_get_url:
+      url: https://www.7-zip.org/a/7z2301-x64.exe
+      dest: C:\Users\olex\Desktop\7z2301-x64.exe
+  - name: Create User
+    ansible.windows.win_user:
+      name: USER123
+      password: 123
+      state: present
+      groups:
+        - Users
+  - name: Powershell
+    ansible.windows.win_powershell:
+      script: |
+        echo "Hello World"
+  - name: Copy file
+    ansible.windows.win_copy:
+      src: /home/ubuntu/ansible.sh
+      dest: C:\ansible.sh
+  - name: Shutdown
+    ansible.windows.win_command: shutdown /r

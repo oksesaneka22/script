@@ -3,7 +3,9 @@
 sudo apt update
 sudo apt install apt-transport-https
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+repository_url="https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+echo "Adding Docker repository: $repository_url"
+echo | sudo add-apt-repository "deb [arch=amd64] $repository_url"
 sudo apt update
 sudo apt install docker-ce -y
 

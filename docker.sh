@@ -11,7 +11,6 @@ sudo apt install docker-ce -y
 
 sudo usermod -aG docker $USER
 
-sudo systemctl status docker
 docker -v
 
 apt install docker-compose -y

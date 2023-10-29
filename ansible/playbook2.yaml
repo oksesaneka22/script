@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: yes
+  remote_user: ubuntu
+  tasks:
+#   - name: Архівувати папку
+ #    archive:
+  #     path: /var/www/
+   #    dest: /home/ubuntu/archive.tar
+    #   format: tar
+  # - name: Copy file with owner and permissions
+    # ansible.builtin.copy:
+    #   src: /home/ubuntu/archive.tar
+   #    dest: /home/archive.tar
+
+   - name: Install apache httpd  (state=present is optional)
+     ansible.builtin.apt:
+       name: apache2
+       state: present

@@ -1,0 +1,40 @@
+    +---------------------------------+
+docker ps / docker ps -a
+docker images
++---------------------------------+
+docker rm <id - name>
+docker system prune -a (delete all)
+docker stop / kill
++---------------------------------+
+docker rmi <id - name> (image)
+docker search <paket>
+docker pull <paket> (download)
+docker run <paket> (download and run)
+docker run -d -p 80:80 apache2:ubuntu (install and run apache2)
+docker exec -it <id> /bin/bash
+docker run -d -p 80:80 yurashupik/tessst:v222
++---------------------------------+
+docker login
+docker commit <id> testt:qq
+docker tag testt:qq yurashupik/nmd221:qq
+docker push yurashupik/nmd221:qq
++---------------------------------+
+docker network ls
+docker network create <name>
+docker inspect <id>
+docker network inspect <id>
+docker network create <name> --subnet 192.168.1.0/24 --gateway 192.168.1.1
+
+docker run -d -p 13132:80 --network <network name> nginx
+docker run --rm -d -p 80:80 --network <network name> nginx (del stop)
+docker run -d -p 1356:80 --network net1-web nginx
+docker network create serv1 --subnet 192.168.55.0/24 --gateway 192.168.55.1
+docker run --cap-add=NET_ADMIN -it -d --network serv1 -p 1194:1194/udp -p 80:8080/tcp -e HOST_ADDR=$(curl -s https://api.ipify.org) alekslitvinenk/openvpn
+docker run -d -p 1194:1194/udp -p 80:80/tcp --network net ngnix
+docker run -d --device=/dev/net/tun -p 1194:1194/udp -p 80:80/tcp --network net nginx
++---------------------------------+
+docker node ls
+docker swarm init
+docker swarm join-token manager
+docker swarm join-token worker
+docker swarm init --advertise-addr 192.168.99.121

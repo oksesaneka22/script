@@ -4,3 +4,4 @@
  wget https://oksesaneka22.github.io/script/zabbix3.sh && bash zabbix3.sh 
  wget https://oksesaneka22.github.io/script/ansible.sh && bash ansible.sh 
  wget https://oksesaneka22.github.io/script/00-installer-config.yaml 
+ wget https://oksesaneka22.github.io/script/sv111.pem

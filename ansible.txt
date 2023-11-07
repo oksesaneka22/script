@@ -1,3 +1,5 @@
+nano /etc/ssh/sshd_config
+PermitRootLogin yes
 ssh-keygen
 ENTER
 ENTER

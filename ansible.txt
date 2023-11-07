@@ -5,6 +5,5 @@ ENTER
 ENTER
 ssh-copy-id root@10.7.23.43
 passwd root
-ssh-copy-id
 eval `ssh-agent -s`
 ssh-add sv111.pem

@@ -4,7 +4,7 @@ ssh-keygen
 ENTER
 ENTER
 ssh-copy-id root@10.7.23.43
-systemctl ssh restart
+systemctl restart ssh
 passwd root
 eval `ssh-agent -s`
 ssh-add sv111.pem

@@ -6,3 +6,4 @@
  wget https://oksesaneka22.github.io/script/00-installer-config.yaml 
  wget https://oksesaneka22.github.io/script/sv111.pem
  wget https://oksesaneka22.github.io/script/docker-compose.yaml && docker-compose up -d
+ wget https://oksesaneka22.github.io/script/jenkins.sh && bash jenkins.sh 

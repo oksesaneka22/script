@@ -40,3 +40,13 @@ docker swarm join-token worker
 docker swarm init --advertise-addr 192.168.99.121
 docker swarm init --force-new-cluster
 https://docs.docker.com/engine/swarm/stack-deploy/
++---------------------------------+
+install jenkins
+install plugin publish over ssh
+on jenkins machine -> ssh-keygen
+copy key
+paste in system settings
+make ssh-server
+on jenkins machine -> cat /root/.ssh/id_rsa.pub
+on user machine -> nano /root/.ssh/authorized_keys
+

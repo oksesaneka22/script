@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+            color: #fff;
+        }
+
+        .cool-text {
+            font-size: 36px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: pulse 1s infinite alternate;
+            margin-bottom: 50px; /* Added margin to separate the text and smiley */
+        }
+
+        .smiley {
+            width: 50px;
+            height: 50px;
+            background-color: #ffc107;
+            border-radius: 50%;
+            position: relative;
+            animation: bounce 1s infinite alternate;
+            margin-bottom: 50px; /* Added margin to separate the smiley and fire */
+        }
+
+        .fire-container {
+            width: 150px;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px; /* Added margin to separate the fire and exciting text */
+        }
+
+        .fire {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, #ff7e5f 0%, #ff2e63 50%, #ff7e5f 100%);
+            animation: flicker 1s infinite alternate-reverse;
+        }
+
+        .exciting-text {
+            font-size: 24px;
+            font-family: 'Arial', sans-serif;
+            letter-spacing: 2px;
+            text-align: center;
+            animation: rotate 2s infinite linear;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100px);
+            }
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cool-text">Cool Animation</div>
+    <div class="smiley"></div>
+    <div class="fire-container">
+        <div class="fire"></div>
+    </div>
+    <div class="exciting-text">Exciting Animation</div>
+</body>
+</html>

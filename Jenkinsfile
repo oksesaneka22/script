@@ -7,7 +7,7 @@ pipeline {
                 script {
                     // Use 'sh' step to execute shell commands
                     sh 'ls /'
-                    sh 'apt install apache2 -y'
+                    sh 'sudo apt install apache2 -y'
                 }
             }
         }

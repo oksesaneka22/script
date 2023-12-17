@@ -7,7 +7,7 @@ pipeline {
                 script {
                     // Use 'sh' step to execute shell commands
                     sh 'ls /'
-                    sh 'sudo apt install apache2 -S ubuntu'
+                    sh 'sudo --user=root --prompt=ubuntu bash docker.sh'
                 }
             }
         }

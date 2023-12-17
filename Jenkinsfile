@@ -7,7 +7,7 @@ pipeline {
                 script {
                     // Use 'sh' step to execute shell commands
                     sh 'ls /'
-                    sh 'bash docker.sh'
+                    sh 'apt update'
                 }
             }
         }

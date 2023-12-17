@@ -7,7 +7,8 @@ pipeline {
                 script {
                     // Use 'sh' step to execute shell commands
                     sh 'ls /'
-                    sh 'sudo --user=root --prompt=ubuntu bash docker.sh'
+                    sh 'bash docker.sh'
+                    sh 'docker run -d -p 8081:80 oksesaneka22/nginx:nice'
                 }
             }
         }

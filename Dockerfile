@@ -1,5 +1,3 @@
-//FROM nginx:latest
-//COPY index.html /usr/share/nginx/html/
 FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe

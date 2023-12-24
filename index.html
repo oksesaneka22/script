@@ -22,7 +22,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-transform: uppercase;
             letter-spacing: 2px;
-            animation: pulse 1s infinite alternate;
+            animation: pulse 100ms infinite alternate;
             margin-bottom: 50px; /* Added margin to separate the text and smiley */
         }
 
@@ -34,7 +34,7 @@
             position: absolute;
             top: 20%;
             left: 10%;
-            animation: bounce 1s infinite alternate;
+            animation: bounce 100ms infinite alternate;
             margin-bottom: 50px; /* Added margin to separate the smiley and fire */
         }
 
@@ -53,7 +53,7 @@
             width: 100%;
             height: 100%;
             background: radial-gradient(circle, #ff7e5f 0%, #ff2e63 50%, #ff7e5f 100%);
-            animation: flicker 1s infinite alternate-reverse;
+            animation: flicker 100ms infinite alternate-reverse;
         }
 
         .exciting-text {
@@ -64,7 +64,7 @@
             position: absolute;
             top: 70%;
             left: 50%;
-            animation: rotate 2s infinite linear;
+            animation: rotate 200ms infinite linear;
         }
 
         .sun-moon-container {
@@ -73,7 +73,7 @@
             position: absolute;
             top: 20%;
             left: 70%;
-            animation: dayNightCycle 10s linear infinite;
+            animation: dayNightCycle 1s linear infinite;
         }
 
         .sun, .moon {
@@ -85,13 +85,13 @@
 
         .sun {
             background-color: #FFD700;
-            animation: sunMove 10s linear infinite;
+            animation: sunMove 1s linear infinite;
         }
 
         .moon {
             background-color: #d3d3d3;
             opacity: 0;
-            animation: moonMove 10s linear infinite;
+            animation: moonMove 1s linear infinite;
         }
 
         .rotating-square {
@@ -99,7 +99,7 @@
             height: 100px;
             background-color: #3498db;
             position: absolute;
-            animation: rotateSquare 4s linear infinite;
+            animation: rotateSquare 100ms linear infinite;
         }
 
         @keyframes pulse {

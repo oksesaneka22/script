@@ -12,7 +12,7 @@ RUN apt-get install nano -y
 RUN apt-get install vim -y
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN echo '[privilege escalation] >> /etc/ansible/ansible.cfg
-RUN echo 'become_ask_pass = True >> /etc/ansible/ansible.cfg
+RUN echo '[privilege escalation] ' >> /etc/ansible/ansible.cfg
+RUN echo 'become_ask_pass = True ' >> /etc/ansible/ansible.cfg
 RUN echo '[defaults]' >> /etc/ansible/ansible.cfg
 RUN echo 'host_key_checking = False' >> /etc/ansible/ansible.cfg

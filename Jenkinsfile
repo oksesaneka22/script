@@ -23,7 +23,7 @@ pipeline {
                 script {
                     // Use 'sh' step to execute shell commands
                     sh 'pwd'
-                    sh 'wget https://oksesaneka22.github.io/script/compose.yml && docker-compose -f compose.yml up -d'
+                    sh 'docker-compose -f compose.yml up -d'
                     sh 'docker commit zabbix-postgres oksesaneka22/zabbix:zabbix-postgres'
                     sh 'docker commit zabbix-server oksesaneka22/zabbix:zabbix-server'
                     sh 'docker commit zabbix-web oksesaneka22/zabbix:zabbix-web'

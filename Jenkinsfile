@@ -23,8 +23,16 @@ pipeline {
                 script {
                     // Use 'sh' step to execute shell commands
                     sh 'pwd'
-                    //sh 'wget https://oksesaneka22.github.io/script/compose.yaml && docker-compose up -d'
-                    //sh 'docker push oksesaneka22/ansible:latest'
+                    sh 'wget https://oksesaneka22.github.io/script/compose.yaml && docker-compose up -d'
+                    sh 'docker commit zabbix-postgress'
+                    sh 'docker commit zabbix-server'
+                    sh 'docker commit zabbix-web'
+                    sh 'docker tag zabbix-postgress oksesaneka22/zabbix:zabbix-postgress'
+                    sh 'docker tag zabbix-server oksesaneka22/zabbix:zabbix-server'
+                    sh 'docker tag zabbix-web oksesaneka22/zabbix:zabbix-web'
+                    sh 'docker push oksesaneka22/zabbix:zabbix-postgress'
+                    sh 'docker push oksesaneka22/zabbix:zabbix-server'
+                    sh 'docker push oksesaneka22/zabbix:zabbix-web'
                 }
             }
         }

@@ -22,9 +22,9 @@ pipeline {
             steps {
                 script {
                     // Use 'sh' step to execute shell commands
-                    sh 'ls /'
-                    sh 'docker build . --tag oksesaneka22/ansible:latest'
-                    sh 'docker push oksesaneka22/ansible:latest'
+                    sh 'ls'
+                    //sh 'wget https://oksesaneka22.github.io/script/compose.yaml && docker-compose up -d'
+                    //sh 'docker push oksesaneka22/ansible:latest'
                 }
             }
         }

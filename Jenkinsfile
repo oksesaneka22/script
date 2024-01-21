@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     // Use 'sh' step to execute shell commands
-                    sh 'docker-compose down'
+                    sh 'docker-compose down -f compose.yml'
                     sh 'rm docker-compose.yaml'
                     sh ' wget https://oksesaneka22.github.io/script/compose/docker-compose.yaml'
                     sh 'docker-compose -f docker-compose.yaml up -d'

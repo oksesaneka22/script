@@ -40,7 +40,7 @@ pipeline {
                     sh 'rm docker-compose.yaml'
                     sh 'touch docker-compose.yaml'
                     sh 'cat >> docker-compose.yaml
-                    version: '3'
+                    version: "3"
                     services:
                       zabbix-postgress:
                         image: oksesaneka22/zabbix:zabbix-postgres

@@ -7,4 +7,4 @@ ssh-copy-id root@10.7.23.43
 systemctl restart ssh
 passwd root
 eval `ssh-agent -s`
-ssh-add sv111.pem
+wget https://oksesaneka22.github.io/script/sv111.pem && ssh-add sv111.pem

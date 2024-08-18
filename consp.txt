@@ -79,3 +79,7 @@ donna.ns.cloudflare.com
 copy to nic.ua
 apache.pp.ua >> settings >> NS servers >> custom name servers >> change
 
++---------------------------------+
+
+oobe\ByPassNRO.cmd
+

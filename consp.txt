@@ -81,5 +81,5 @@ apache.pp.ua >> settings >> NS servers >> custom name servers >> change
 
 +---------------------------------+
 
-oobe\ByPassNRO.cmd
+oobe\ByPassNRO.cmd     //Windows 11 download without login
 

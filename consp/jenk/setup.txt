@@ -1,0 +1,29 @@
+//install plugin publish over ssh
++---------------------------------+
+sudo ssh-keygen -t ed25519 -f /root/.ssh/id_ed25519 -C "okseigri22@gmail.com"
+cat /root/.ssh/id_ed25519.pub             //copy to git
+cat /root/.ssh/id_ed25519                 //copy to jenkins
++---------------------------------+
+eval "$(ssh-agent -s)"
+sudo -u jenkins ssh-keyscan -t ed25519 github.com >> /var/lib/jenkins/.ssh/known_hosts
+sudo systemctl restart jenkins
+
+create git repository with Jenkinsfile
+
+pipeline {
+    agent any
+    stages {
+        stage('test stage') {
+            steps {
+                script {
+                    // Use 'sh' step to execute shell commands
+                    sh 'apt update'
+                }
+            }
+        }
+    }
+}
+
+Create Pipeline
+paste git url and credentionals
+branch master --> main

@@ -27,3 +27,10 @@ pipeline {
 Create Pipeline
 paste git url and credentionals
 branch master --> main
+
+
+//
+sudo usermod -aG docker jenkins
+sudo systemctl restart jenkins
+sudo systemctl restart docker
+//

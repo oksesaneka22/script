@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage("docker login") {
+    steps {
+        echo " ============== docker login =================="
+        withCredentials([usernamePassword(credentialsId: '2be94a23-4709-484b-8961-0a492b455d4a', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+            script {
+                echo '$USERNAME'
+                echo 'Logging into Docker...'
+                sh """
+                echo "$PASSWORD" | docker login -u "$USERNAME" --password-stdin
+                """
+            }
+        }
+        echo " ============== docker login completed =================="
+    }
+}
+        stage('run') {
+            steps {
+                script {
+                    // Use 'sh' step to execute shell commands
+                    sh 'pwd'
+                    sh 'docker run -d -p 80:80 oksesaneka22/nginx:123'
+                }
+            }
+        }
+    }
+}

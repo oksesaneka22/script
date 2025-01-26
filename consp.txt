@@ -83,3 +83,12 @@ apache.pp.ua >> settings >> NS servers >> custom name servers >> change
 
 oobe\ByPassNRO.cmd     //Windows 11 download without login
 
+
+
+ssh-keygen -t rsa -b 4096 -C "okseigri22@gmail.com"
+cat ~/.ssh/id_rsa.pub
+copy key to git --> settings new ssh key
+
+
+
+

@@ -83,12 +83,27 @@ apache.pp.ua >> settings >> NS servers >> custom name servers >> change
 
 oobe\ByPassNRO.cmd     //Windows 11 download without login
 
-
++---------------------------------+
 
 ssh-keygen -t rsa -b 4096 -C "okseigri22@gmail.com"
 cat ~/.ssh/id_rsa.pub
 copy key to git --> settings new ssh key
 
++---------------------------------+
 
-
+apt update
+sudo apt install -y openjdk-17-jdk
+sudo useradd -d /var/lib/jenkins jenkins
+ssh-keygen
+sudo mkdir -p /var/lib/jenkins/.sshsudo && sudo mkdir /var/lib/jenkins/.ssh
+cat /root/.ssh/id_ed25519.pub
+copy to --> nano /var/lib/jenkins/.ssh/authorized_keys
+sudo chown -R jenkins:jenkins /var/lib/jenkins
+Manage Jenkins --> Manage Nodes --> New Node --> Permanent Agent
+Launch Method --> Launch Slave Agents via SSH
+Host --> ipv4
+Add credentials(SSH username with private key)
+Username - jenkins
+cat /root/.ssh/id_ed25519 --> private key
+Remote root directory --> /var/lib/jenkins
 

@@ -65,9 +65,9 @@ sudo chmod 600 /var/lib/jenkins/.ssh/id_ed25519
 sudo chmod 644 /var/lib/jenkins/.ssh/id_ed25519.pub
 sudo -u jenkins ssh-keyscan -t ed25519 github.com >> /var/lib/jenkins/.ssh/known_hosts
 sudo systemctl restart jenkins
-//sudo usermod -aG docker jenkins
-//sudo service docker restart
-//sudo service jenkins restart
+sudo usermod -aG docker jenkins
+sudo service docker restart
+sudo service jenkins restart
 +---------------------------------+
 >>>nic.ua
 buy domain
@@ -106,4 +106,5 @@ Add credentials(SSH username with private key)
 Username - jenkins
 cat /root/.ssh/id_ed25519 --> private key
 Remote root directory --> /var/lib/jenkins
-
+sudo usermod -aG docker jenkins
+sudo service docker restart

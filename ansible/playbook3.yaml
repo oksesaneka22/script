@@ -1,0 +1,34 @@
+---
+- name: Gather logs for Docker containers
+  hosts: all
+  become: yes
+  tasks:
+    - name: Get logs for site123-backend-1 container
+      command: docker logs site123-backend-1
+      register: backend_logs
+      ignore_errors: yes
+
+    - name: Get logs for site123-frontend-1 container
+      command: docker logs site123-frontend-1
+      register: frontend_logs
+      ignore_errors: yes
+
+    - name: Get logs for site123-mysql-1 container
+      command: docker logs site123-mysql-1
+      register: mysql_logs
+      ignore_errors: yes
+
+    - name: Display the backend logs
+      debug:
+        msg: "{{ backend_logs.stdout }}"
+      when: backend_logs.rc == 0
+
+    - name: Display the frontend logs
+      debug:
+        msg: "{{ frontend_logs.stdout }}"
+      when: frontend_logs.rc == 0
+
+    - name: Display the mysql logs
+      debug:
+        msg: "{{ mysql_logs.stdout }}"
+      when: mysql_logs.rc == 0

@@ -10,9 +10,14 @@ sudo apt-get install grafana -y && echo "Installed Grafana"
 sudo apt-get install grafana-enterprise -y && echo "Installed Grafana Enterprise"
 sudo systemctl start grafana-server && echo "Started Grafana service"
 sudo systemctl enable grafana-server && echo "Enabled Grafana service to start on boot"
+
+
 sudo curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && echo "Downloaded Cloudflared package"
 sudo dpkg -i cloudflared.deb && echo "Installed Cloudflared"
 sudo cloudflared service install eyJhIjoiNjZkNDdjMjZhODk4ZWJkNmU5MDBhN2RhNDJkMzE5NTgiLCJ0IjoiYzllOTZhMTItYTM5NS00ZDkwLWFhNDgtZjM5N2VmZWJiOTJiIiwicyI6IllqQXlaVE01WXpJdFpUVTRZaTAwT0dZMkxXSXhaVFV0TldWbVlqa3lOalZsWVRReiJ9 -y && echo "Configured Cloudflared tunnel service"
+
+
+
 sudo wget https://github.com/prometheus/prometheus/releases/download/v3.2.1/prometheus-3.2.1.linux-386.tar.gz && echo "Downloaded Prometheus"
 sudo tar -xzf prometheus-3.2.1.linux-386.tar.gz && echo "Extracted Prometheus"
 sudo rm ./prometheus-3.2.1.linux-386/prometheus.yml && echo "Removed default Prometheus config"
@@ -25,7 +30,7 @@ sudo chown prometheus:prometheus /usr/local/bin/prometheus && echo "Set ownershi
 sudo chown prometheus:prometheus /usr/local/bin/promtool && echo "Set ownership for Promtool"
 sudo mkdir /etc/prometheus && echo "Created /etc/prometheus directory"
 sudo mkdir /var/lib/prometheus && echo "Created /var/lib/prometheus directory"
-sudo mv ./prometheus-3.2.1.linux-386/prometheus.yml /etc/prometheus && echo "Moved Prometheus config"
+sudo mv ./prometheus.yml /etc/prometheus && echo "Moved Prometheus config"
 sudo chown prometheus:prometheus /etc/prometheus && echo "Set ownership for /etc/prometheus"
 sudo chown -R prometheus:prometheus /var/lib/prometheus && echo "Set ownership for /var/lib/prometheus"
 sudo tee /etc/systemd/system/prometheus.service > /dev/null <<EOF && echo "Created Prometheus systemd service file"
@@ -48,6 +53,8 @@ EOF
 sudo systemctl daemon-reload && echo "Reloaded systemd daemon"
 sudo systemctl enable prometheus && echo "Enabled Prometheus service"
 sudo systemctl start prometheus && echo "Started Prometheus service"
+
+
 sudo wget https://github.com/prometheus/blackbox_exporter/releases/download/v0.14.0/blackbox_exporter-0.14.0.linux-amd64.tar.gz && echo "Downloaded Blackbox Exporter"
 sudo tar xvzf blackbox_exporter-0.14.0.linux-amd64.tar.gz && echo "Extracted Blackbox Exporter"
 sudo mv ./blackbox_exporter-0.14.0.linux-amd64/blackbox_exporter /usr/local/bin && echo "Moved Blackbox Exporter binary"
@@ -77,3 +84,4 @@ WantedBy=multi-user.target
 EOF
 sudo systemctl enable blackbox.service && echo "Enabled Blackbox Exporter service"
 sudo systemctl start blackbox.service && echo "Started Blackbox Exporter service"
+sudo systemctl restart prometheus

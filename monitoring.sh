@@ -14,9 +14,6 @@ sudo systemctl enable grafana-server && echo "Enabled Grafana service to start o
 
 sudo curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && echo "Downloaded Cloudflared package"
 sudo dpkg -i cloudflared.deb && echo "Installed Cloudflared"
-sudo cloudflared service install eyJhIjoiNjZkNDdjMjZhODk4ZWJkNmU5MDBhN2RhNDJkMzE5NTgiLCJ0IjoiYzllOTZhMTItYTM5NS00ZDkwLWFhNDgtZjM5N2VmZWJiOTJiIiwicyI6IllqQXlaVE01WXpJdFpUVTRZaTAwT0dZMkxXSXhaVFV0TldWbVlqa3lOalZsWVRReiJ9 -y && echo "Configured Cloudflared tunnel service"
-
-
 
 sudo wget https://github.com/prometheus/prometheus/releases/download/v3.2.1/prometheus-3.2.1.linux-386.tar.gz && echo "Downloaded Prometheus"
 sudo tar -xzf prometheus-3.2.1.linux-386.tar.gz && echo "Extracted Prometheus"

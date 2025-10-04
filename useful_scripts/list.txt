@@ -1,0 +1,89 @@
+System & Monitoring Scripts
+
+System Resource Monitor (CPU, RAM, Disk, Network)
+
+Python script using psutil to log usage or send alerts.
+
+Disk Space Alert Script
+
+Bash script that checks df -h and sends Slack/email alerts if thresholds are exceeded.
+
+Process Health Check
+
+Bash script that checks if a critical service (e.g., nginx, postgres) is running, restarts it if not.
+
+Port/Service Availability Checker
+
+Python script that attempts TCP connections to services and reports failures.
+
+Log File Monitor with Alerts
+
+Python script that tails a log file and sends alerts if certain error patterns appear.
+
+🔹 Automation & Infrastructure Scripts
+
+Automated Package Update Script
+
+Bash script for updating system packages (apt, yum, dnf) and logging results.
+
+SSH Key Distribution Script
+
+Bash script to copy and distribute public keys across servers for passwordless login.
+
+Infrastructure Provision Validation Script
+
+Python script to verify all required environment variables, DNS entries, and configs after IaC deployment.
+
+Cron Job Validator
+
+Bash script to list and validate cron jobs across multiple servers.
+
+Cloud Resource Cleaner
+
+Python script with boto3/gcloud/azure SDKs to clean up unused EC2, disks, snapshots, etc.
+
+🔹 CI/CD & Deployment Scripts
+
+Git Hook Script
+
+Bash pre-commit hook that enforces code linting/tests before commits.
+
+Docker Image Cleanup Script
+
+Bash script to remove old Docker images and containers not in use.
+
+Kubernetes Health Check Script
+
+Python script using kubectl/kubernetes API to check pod health and restart failed pods.
+
+Blue-Green Deployment Switcher
+
+Bash script to swap symlinks/load balancer targets for zero-downtime deploys.
+
+Ansible Playbook Runner Wrapper
+
+Python script that dynamically selects and executes Ansible playbooks with parameters.
+
+🔹 Backup & Recovery Scripts
+
+PostgreSQL Backup to S3
+
+Python script with pg_dump + boto3 to upload DB backups.
+
+File System Incremental Backup
+
+Bash script using rsync with hard links for efficient incremental backups.
+
+Config Drift Detector
+
+Python script that compares current config files with Git repo versions and alerts differences.
+
+🔹 Security & Compliance Scripts
+
+Open Ports Scanner
+
+Python script with socket to scan a server for open ports.
+
+Secrets/Key Expiration Checker
+
+Python script to check SSL cert expiry dates, AWS keys, and notify before expiration.
